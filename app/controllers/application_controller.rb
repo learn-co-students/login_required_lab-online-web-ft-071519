@@ -8,10 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def home
-    # binding.pry
-    # if !current_user
-    #   redirect_to login_path
-    # end
+    if !current_user
+      redirect_to login_path
+    end
   end
 
 end
