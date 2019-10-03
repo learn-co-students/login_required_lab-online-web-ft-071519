@@ -5,4 +5,13 @@ class SecretsController < ApplicationController
   def show
     
   end 
+
+  def require_login
+    if session[:name].nil? || session[:name].empty?
+      redirect_to '/sessions/new'
+    else
+      render '/secrets/show'
+    end 
+  end
+
 end
